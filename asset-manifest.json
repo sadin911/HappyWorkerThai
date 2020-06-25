@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/HappyLabor/static/css/main.523f09c5.chunk.css",
-    "main.js": "/HappyLabor/static/js/main.47f33313.chunk.js",
-    "main.js.map": "/HappyLabor/static/js/main.47f33313.chunk.js.map",
-    "runtime-main.js": "/HappyLabor/static/js/runtime-main.2d3c7d78.js",
-    "runtime-main.js.map": "/HappyLabor/static/js/runtime-main.2d3c7d78.js.map",
-    "static/css/2.061d3df3.chunk.css": "/HappyLabor/static/css/2.061d3df3.chunk.css",
-    "static/js/2.6b8b7c22.chunk.js": "/HappyLabor/static/js/2.6b8b7c22.chunk.js",
-    "static/js/2.6b8b7c22.chunk.js.map": "/HappyLabor/static/js/2.6b8b7c22.chunk.js.map",
-    "index.html": "/HappyLabor/index.html",
-    "precache-manifest.b7c2b147f13be3a0567720b4bc4924eb.js": "/HappyLabor/precache-manifest.b7c2b147f13be3a0567720b4bc4924eb.js",
-    "service-worker.js": "/HappyLabor/service-worker.js",
-    "static/css/2.061d3df3.chunk.css.map": "/HappyLabor/static/css/2.061d3df3.chunk.css.map",
-    "static/css/main.523f09c5.chunk.css.map": "/HappyLabor/static/css/main.523f09c5.chunk.css.map",
-    "static/js/2.6b8b7c22.chunk.js.LICENSE.txt": "/HappyLabor/static/js/2.6b8b7c22.chunk.js.LICENSE.txt"
+    "main.css": "/HappyWorkerThai/static/css/main.523f09c5.chunk.css",
+    "main.js": "/HappyWorkerThai/static/js/main.9ff48d53.chunk.js",
+    "main.js.map": "/HappyWorkerThai/static/js/main.9ff48d53.chunk.js.map",
+    "runtime-main.js": "/HappyWorkerThai/static/js/runtime-main.24530c20.js",
+    "runtime-main.js.map": "/HappyWorkerThai/static/js/runtime-main.24530c20.js.map",
+    "static/css/2.061d3df3.chunk.css": "/HappyWorkerThai/static/css/2.061d3df3.chunk.css",
+    "static/js/2.b094b1bc.chunk.js": "/HappyWorkerThai/static/js/2.b094b1bc.chunk.js",
+    "static/js/2.b094b1bc.chunk.js.map": "/HappyWorkerThai/static/js/2.b094b1bc.chunk.js.map",
+    "index.html": "/HappyWorkerThai/index.html",
+    "precache-manifest.66a6071d4e0c682e77856949b0e1a405.js": "/HappyWorkerThai/precache-manifest.66a6071d4e0c682e77856949b0e1a405.js",
+    "service-worker.js": "/HappyWorkerThai/service-worker.js",
+    "static/css/2.061d3df3.chunk.css.map": "/HappyWorkerThai/static/css/2.061d3df3.chunk.css.map",
+    "static/css/main.523f09c5.chunk.css.map": "/HappyWorkerThai/static/css/main.523f09c5.chunk.css.map",
+    "static/js/2.b094b1bc.chunk.js.LICENSE.txt": "/HappyWorkerThai/static/js/2.b094b1bc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2d3c7d78.js",
+    "static/js/runtime-main.24530c20.js",
     "static/css/2.061d3df3.chunk.css",
-    "static/js/2.6b8b7c22.chunk.js",
+    "static/js/2.b094b1bc.chunk.js",
     "static/css/main.523f09c5.chunk.css",
-    "static/js/main.47f33313.chunk.js"
+    "static/js/main.9ff48d53.chunk.js"
   ]
 }
