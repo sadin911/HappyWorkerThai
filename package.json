@@ -48,7 +48,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://ventisca13198.github.io/HappyLabor",
   "devDependencies": {
     "gh-pages": "^3.1.0"
   }

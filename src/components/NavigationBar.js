@@ -7,6 +7,7 @@ import {
   Col,
   Dropdown,
   Container,
+  DropdownButton,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -14,6 +15,7 @@ import ReactCountryFlag from "react-country-flag";
 import NavBarPopup from "./NavBarPopup";
 import ScrollToTop from "./ScrollTotop";
 import { FaChevronRight } from "react-icons/fa";
+import i18n from "../locales/i18n";
 const Styles = styled.div`
   .text-nav {
     textdecoration: none;
@@ -74,9 +76,33 @@ export default class NavigationBar extends Component {
   state = {
     isTop: true,
     display: false,
+    iconLanguage: "",
+    textLanguage: "",
+    lableLanguage: "",
   };
 
-  componentDidMount() {
+  changeLanguageLabel = async (lang, flag, lable) => {
+    await i18n.changeLanguage(lang);
+    await localStorage.setItem("@LANGUAGE_ICON", flag);
+    await localStorage.setItem("@LANGUAGE_TEXT", lang);
+    await localStorage.setItem("@LANGUAGE_LABLE", lable);
+    await this.setState({
+      iconLanguage: flag,
+      textLanguage: lang,
+      lableLanguage: lable,
+    });
+  };
+
+  async componentDidMount() {
+    var flag = await localStorage.getItem("@LANGUAGE_ICON");
+    var lang = await localStorage.getItem("@LANGUAGE_TEXT");
+    var lable = await localStorage.getItem("@LANGUAGE_LABLE");
+    await this.setState({
+      iconLanguage: flag,
+      textLanguage: lang,
+      lableLanguage: lable,
+    });
+
     document.addEventListener("scroll", () => {
       const isTopTemp = window.scrollY < 300;
       if (isTopTemp !== this.state.isTop) {
@@ -101,7 +127,7 @@ export default class NavigationBar extends Component {
           ""
         ) : (
           <div>
-            <NavBarPopup style={{ zIndex: 10000 }} />
+            <NavBarPopup style={{ zIndex: 10000 }} changeLanguageLabel={this.changeLanguageLabel}/>
             <div
               style={{
                 backgroundColor: "rgba(0,0,0,0)",
@@ -157,7 +183,10 @@ export default class NavigationBar extends Component {
               <Col style={{ textAlign: "right", right: 20 }}>
                 <Dropdown>
                   <Dropdown.Toggle variant="link" id="dropdown-basic">
-                    <ReactCountryFlag countryCode="TH" svg />
+                    <ReactCountryFlag
+                      countryCode={this.state.iconLanguage}
+                      svg
+                    />
                     <span
                       className="text-country-selected"
                       style={{
@@ -165,28 +194,48 @@ export default class NavigationBar extends Component {
                         fontSize: 14,
                       }}
                     >
-                      ไทย
+                      {this.state.lableLanguage}
                     </span>
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">
+                    <Dropdown.Item
+                      onClick={() => {
+                        this.changeLanguageLabel("th", "TH", "ไทย");
+                      }}
+                    >
                       <ReactCountryFlag countryCode="TH" svg />
                       <span className="text-country">ไทย</span>
                     </Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">
+                    <Dropdown.Item
+                      onClick={() => {
+                        this.changeLanguageLabel("en", "US", "English");
+                      }}
+                    >
                       <ReactCountryFlag countryCode="US" svg />
                       <span className="text-country">English</span>
                     </Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">
+                    <Dropdown.Item
+                      onClick={() => {
+                        this.changeLanguageLabel("la", "LA", "ລາວ");
+                      }}
+                    >
                       <ReactCountryFlag countryCode="LA" svg />
                       <span className="text-country">ລາວ</span>
                     </Dropdown.Item>
-                    <Dropdown.Item href="#/action-4">
+                    <Dropdown.Item
+                      onClick={() => {
+                        this.changeLanguageLabel("mm", "MM", "မြန်မာဘာသာ");
+                      }}
+                    >
                       <ReactCountryFlag countryCode="MM" svg />
                       <span className="text-country">မြန်မာဘာသာ</span>
                     </Dropdown.Item>
-                    <Dropdown.Item href="#/action-5">
+                    <Dropdown.Item
+                      onClick={() => {
+                        this.changeLanguageLabel("kh", "KH", "ភាសាខ្មែរ");
+                      }}
+                    >
                       <ReactCountryFlag countryCode="KH" svg />
                       <span className="text-country">ភាសាខ្មែរ</span>
                     </Dropdown.Item>

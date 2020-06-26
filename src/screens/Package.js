@@ -8,6 +8,7 @@ import StepLabel from "@material-ui/core/StepLabel";
 import Typography from "@material-ui/core/Typography";
 import { happyPackage } from "../data";
 import { FiArrowRightCircle } from "react-icons/fi";
+import { withTranslation } from "react-i18next";
 
 //=================== start Stepper ===================
 const useStyles = makeStyles((theme) => ({
@@ -102,8 +103,9 @@ function VerticalStepper() {
 }
 //=================== end Stepper ===================
 
-export default class Package extends Component {
+class Package extends Component {
   render() {
+    const { t, i18n } = this.props;
     return (
       <div style={{ marginTop: 135 }}>
         <div
@@ -118,6 +120,7 @@ export default class Package extends Component {
           }}
         >
           <div style={{ maxWidth: 1200, textAlign: "left" }}>
+            {/* {t('test')} */}
             <Card.Text
               style={{
                 color: "#007bff",
@@ -368,3 +371,5 @@ export default class Package extends Component {
     );
   }
 }
+
+export default withTranslation()(Package);

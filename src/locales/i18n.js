@@ -8,6 +8,14 @@ import la from "./la.json";
 import mm from "./mm.json";
 import kh from "./kh.json";
 
+async function initLanguage() {
+  var lan = await localStorage.getItem("@LANGUAGE_LABLE");
+  if (!lan) {
+    lan = "en";
+  }
+  await i18n.changeLanguage(lan);
+}
+
 i18n
   .use(XHR)
   //   .use(LanguageDetector)
@@ -15,7 +23,9 @@ i18n
     debug: true,
     lng: "en",
     fallbackLng: "en", // use en if detected lng is not available
-
+    react: {
+      useSuspense: false,
+    },
     keySeparator: false, // we do not use keys in form messages.welcome
 
     interpolation: {
@@ -53,4 +63,5 @@ i18n
     defaultNS: "translations",
   });
 
+initLanguage();
 export default i18n;
